@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server --watch --open --config webpack.config.dev.js",
     "prod": "NODE_ENV=production webpack --config webpack.config.prod.js",
-    "lint:eslint": "eslint js/*.js",
+    "lint:eslint": "eslint --ext js/**/*.js js/**/*.vue",
     "lint:stylelint": "stylelint styles/**/*.scss",
     "lint": "run-p lint:stylelint lint:eslint"
   },
@@ -17,17 +17,20 @@
     "@babel/preset-env": "^7.0.0",
     "@csstools/postcss-sass": "^3.0.0",
     "autoprefixer": "^9.4.5",
-    "babel-eslint": "^10.0.1",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.0",
     "clean-webpack-plugin": "^1.0.0",
     "css-loader": "^2.1.0",
     "cssnano": "^4.1.8",
     "eslint": "^6.8",
     "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-html": "^6.1.2",
     "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-vue": "^7.9.0",
     "file-loader": "^3.0.1",
     "html-webpack-plugin": "^4.0.3",
     "imports-loader": "^0.8.0",
+    "json-loader": "^0.5.7",
     "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.11.0",
     "npm-run-all": "^4.1.5",
@@ -55,10 +58,11 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "body-scroll-lock": "^3.0.3",
     "imagesloaded": "^4.1.4",
     "vanilla-lazyload": "^12.4.0",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vuex": "^3.6.2"
   }
 }

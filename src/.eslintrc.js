@@ -5,10 +5,16 @@ module.exports = {
     node: true
   },
   parserOptions: {
-    parser: "babel-eslint"
+    parser: 'babel-eslint',
+    ecmaVersion: 6
   },
   extends: [
-    "airbnb-base"
+    "airbnb-base",
+    "plugin:vue/base"
+  ],
+  plugins: [
+    "vue",
+    "html"
   ],
   // add your custom rules here
   rules: {
