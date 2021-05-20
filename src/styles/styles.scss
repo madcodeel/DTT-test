@@ -1,2 +1,11 @@
 @import './default/reset.scss';
 @import './components/components';
+
+.container {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 15px;
+  width: 100%;
+  max-width: 735px;
+}

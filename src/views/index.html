@@ -9,9 +9,37 @@
 </head>
 
 <body>
-  <h1>Hello World</h1>
   <div id="app">
-    <svg-icon name="right"></svg-icon>
+    <div class="container">
+      <accordion label="進行中" key="accordion-progressing">
+        <template #content>
+          <template v-for="(item, i) in progressingData">
+            <card
+              :key="`card-${i}`"
+              :title="item.name"
+              :status="(item.status.code === 1) || (item.status.code === 2)"
+              :status-text="item.status.type"
+              :logo="item.logo"
+              :date="item.date"
+            ></card>
+          </template>
+        </template>
+      </accordion>
+      <accordion label="已完成" key="accordion-end">
+        <template #content>
+          <template v-for="(item, i) in endData">
+            <card
+              :key="`card-${i}`"
+              :title="item.name"
+              :status="(item.status.code === 1) || (item.status.code === 2)"
+              :status-text="item.status.type"
+              :logo="item.logo"
+              :date="item.date"
+            ></card>
+          </template>
+        </template>
+      </accordion>
+    </div>
   </div>
 </body>
 
