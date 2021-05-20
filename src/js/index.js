@@ -13,9 +13,24 @@ const app = new Vue({
   store,
   methods: {
     ...mapActions(['UPDATE_DATA']),
+    sortData(arr) {
+      return arr.sort((a, b) => new Date(b.date) - new Date(a.date))
+    },
   },
   computed: {
     ...mapState(['cardData']),
+    progressingData() {
+      if (this.cardData) {
+        return this.sortData(this.cardData.filter((item) => [1, 2].includes(item.status.code)))
+      }
+      return null
+    },
+    endData() {
+      if (this.cardData) {
+        return this.sortData(this.cardData.filter((item) => [3, 4].includes(item.status.code)))
+      }
+      return null
+    },
   },
   created() {
     this.UPDATE_DATA()
