@@ -1,9 +1,15 @@
 .card {
   position: relative;
-  display: flex;
-  align-items: center;
+  display: block;
   padding: 40px 35px;
   border: 1px solid #e2e2e2;
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+  }
+  @media (max-width: 767px) {
+    padding: 20px 16px;
+  }
 
   &.-complete {
     .card {
@@ -20,9 +26,10 @@
   }
 
   &__logo {
-    flex: 0 0 auto;
+    margin: 0 auto;
     width: 110px;
     height: 110px;
+    flex: 0 0 auto;
 
     img {
       display: block;
@@ -31,41 +38,64 @@
   }
 
   &__content {
-    flex: 1 1 100%;
     display: block;
     margin-left: 35px;
+    flex: 1 1 100%;
+    @media (max-width: 767px) {
+      margin-top: 20px;
+      margin-left: 0;
+    }
 
     &-info {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      @media (min-width: 768px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
       margin-bottom: 15px;
     }
 
     &-status {
       font-size: 20px;
       color: #138f46;
+      @media (max-width: 767px) {
+        font-size: 16px;
+      }
     }
 
     &-date {
       font-size: 20px;
       color: #222222;
+      @media (max-width: 767px) {
+        margin-top: 10px;
+        font-size: 16px;
+      }
     }
   }
 
   &__title {
     display: -webkit-box;
+    overflow: hidden;
     font-size: 20px;
     color: #444444;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    @media (max-width: 767px) {
+      font-size: 16px;
+    }
   }
 
   &__arrow {
-    flex: 0 0 auto;
+    display: block;
     margin-left: 20px;
     width: 30px;
     height: 30px;
+    flex: 0 0 auto;
     fill: #858585;
+    @media (max-width: 767px) {
+      margin-top: 20px;
+      margin-left: auto;
+    }
   }
 }

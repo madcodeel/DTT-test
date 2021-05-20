@@ -8,7 +8,7 @@
     <div class="card__content">
       <div class="card__content-info">
         <p class="card__content-status">{{ statusText }}</p>
-        <p class="card__content-date" v-if="date && status">預計出貨{{ date }}</p>
+        <p class="card__content-date" v-if="date && status">預計出貨：{{ date }}</p>
       </div>
       <p class="card__title">{{ title }}</p>
     </div>
