@@ -19,7 +19,6 @@ const store = new Vuex.Store({
         axios.get('json/test.json')
           .then((res) => {
             context.commit('SET_CARD_DATA', res.data.orders)
-            console.log(res.data.orders)
             resolve(true)
           })
           .catch((err) => {
