@@ -1,0 +1,35 @@
+.accordion {
+  border: 1px solid #e2e2e2;
+
+  & + & {
+    border-top: 0;
+  }
+
+  &__display {
+    display: flex;
+    align-items: center;
+    padding: 35px 20px;
+    font-size: 20px;
+    color: #444444;
+    background-color: rgb(244, 244, 244);
+    border: 1px solid #e2e2e2;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      display: block;
+      margin-right: 16px;
+      width: 10px;
+      height: 35px;
+      background-color: #138f46;
+    }
+  }
+
+  &__content {
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    transition: height 0.3s;
+    will-change: height;
+  }
+}
