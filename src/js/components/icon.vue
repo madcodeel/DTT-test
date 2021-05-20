@@ -1,27 +1,27 @@
 <template>
-  <svg class="svg-icon" :class="svgClass">
-      <use :xlink:href="'#' + name"></use>
+  <svg class="svg-icon" :class="iconClass">
+    <use :xlink:href="'#' + name"></use>
   </svg>
 </template>
 
 <script>
 export default {
-    computed: {
-        computedClass() {
-            if (this.svgClass.isArray()) {
-                return this.svgClass.map((item) => `${item} `)
-            }
-            return this.svgClass
-        },
+  computed: {
+    computedClass() {
+      if (this.iconClass.isArray()) {
+        return this.iconClass.map((item) => `${item} `)
+      }
+      return this.iconClass
     },
-    props: {
-        svgClass: {
-            type: [String, Array],
-        },
-        name: {
-            type: String,
-            required: true,
-        },
+  },
+  props: {
+    iconClass: {
+      type: [String, Array],
     },
+    name: {
+      type: String,
+      required: true,
+    },
+  },
 }
 </script>
