@@ -86,7 +86,7 @@ module.exports = {
           //     publicPath: '../',
           //   },
           // },
-          "style-loader",
+          'style-loader',
           {
             loader: 'css-loader',
             options: {
@@ -128,7 +128,7 @@ module.exports = {
         options: {
           name: '[path][name].[ext]',
         },
-      }
+      },
     ],
   },
   plugins: [
@@ -140,6 +140,6 @@ module.exports = {
     //   filename: 'style/[name].css',
     //   chunkFilename: '[id].css',
     // }),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
   ],
 }
